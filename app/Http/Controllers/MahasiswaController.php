@@ -29,7 +29,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('pages\mahasiswa\create');
+        return view('pages.mahasiswa.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class MahasiswaController extends Controller
     {
         $mhs = Mahasiswa::findorfail($id);
 
-        return view('pages\mahasiswa\edit')->with([
+        return view('pages.mahasiswa.edit')->with([
             'mhs' => $mhs
         ]);
     }

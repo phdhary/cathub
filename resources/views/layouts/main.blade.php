@@ -8,7 +8,7 @@
 
     {{-- style --}}
     @stack('before-style')
-    @include('includes\style')
+    @include('includes.style')
     @stack('after-style')
 
     <title>@yield('title')</title>
@@ -17,7 +17,7 @@
 <body class="bg-dark">
 
     {{-- navbar --}}
-    @include('includes\navbar')
+    @include('includes.navbar')
 
 
     {{-- container --}}
@@ -26,7 +26,7 @@
     </div>
     {{-- script --}}
     @stack('before-script')
-    @include('includes\script')
+    @include('includes.script')
     @stack('after-script')
 </body>
 
