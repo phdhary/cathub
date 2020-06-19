@@ -6,7 +6,7 @@
 <div class="col-6 text-light">
     <h1 class="mt-10">Tambah Data Mahasiswa Baru</h1>
 
-    <form action="/students/store" method="post">
+    <form action="{{ url('/students/store') }}" method="post">
         @csrf
         <div class="form-group">
             <label for="name">Nama</label>

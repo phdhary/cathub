@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
+use Barryvdh\DomPDF\Facade as PDF;
 
 use App\Models\Student;
 
@@ -104,5 +105,12 @@ class StudentsController extends Controller
         $cari = $request->search;
         $post = DB::table('students')->where('name','like',"%".$cari."%")->paginate(); 
         return view('pages.students.index',['students' => $post]);     
+    }
+    public function print_all()
+    {
+        $students = Student::all();
+        $pdf = PDF::loadview('pages.students.print_all', ['students' => $students]);
+        return $pdf->stream();
+        // return view('pages.students.print_all' ,['students' => $students]);
     }
 }

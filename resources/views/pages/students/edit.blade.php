@@ -7,7 +7,7 @@
         <div class="col-8">
             <h1 class="mt-3 text-light">Form Ubah Data Mahasiswa</h1>
 
-            <form method="post" action="/students/ {{ $student->id }}"> @method('patch') @csrf 
+            <form method="post" action="{{ url('/students/')}} {{ $student->id }}"> @method('patch') @csrf 
                 <div class="form-group">
                     <label for="name" class="text-light">Nama</label>
                      <input 
